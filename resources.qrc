@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/plugins/giap_mvc" >
+        <file>icon.png</file>
+    </qresource>
+</RCC>
