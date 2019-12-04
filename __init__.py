@@ -32,5 +32,5 @@ def classFactory(iface):  # pylint: disable=invalid-name
     :type iface: QgsInterface
     """
     #
-    from .giap_mvc import GiapMVCController
+    from .giap_mvc_controller import GiapMVCController
     return GiapMVCController(iface)

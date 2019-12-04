@@ -13,20 +13,24 @@ class RoadView(QtWidgets.QDialog, FORM_CLASS):
         super(RoadView, self).__init__(parent)
         self.setupUi(self)
         self.mapper = QtWidgets.QDataWidgetMapper(self)
+        self.mapper_dict = {
+            self.lineEdit: 2,
+            self.doubleSpinBox: 20,
+            self.comboBox: 4,
+            self.lineEdit_auto: 13,
+            self.plainTextEdit: 14,
+        }
 
     def set_mapper(self, model, headers):
         """
-
-        :param model:
-        :param headers:
+        Establish connection between model columns and dialog objects
+        :param model: model from tableview
+        :param headers: dict with column names and numbers
         """
         self.mapper.setSubmitPolicy(QtWidgets.QDataWidgetMapper.ManualSubmit)
         self.mapper.setModel(model)
-        self.mapper.addMapping(self.lineEdit, headers['Numer drogi'])
-        self.mapper.addMapping(self.doubleSpinBox, headers['Liczba jezdni'])
-        self.mapper.addMapping(self.comboBox, headers['Kategoria'])
-        self.mapper.addMapping(self.lineEdit_auto, headers['Status'])
-        self.mapper.addMapping(self.plainTextEdit, headers['Uwagi'])
+        for mapped_obj, column in self.mapper_dict.items():
+            self.mapper.addMapping(mapped_obj, column)
 
     def reset_mapper(self):
         self.doubleSpinBox.setValue(0.00)
