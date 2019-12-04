@@ -79,8 +79,8 @@ class RoadsModel(GiapMVCModel):
         'Numer jezdni': 21,
         'Jednokierunkowa': 22,
     }
-    database_path = 'C:/Users/pajton3/Desktop/SKIERNIEWICE_SPDP/' \
-                    'PLIKI_WEKTOROWE/drogowiec.sqlite'
+    database_path = 'C:/Users/pajton3/Desktop/drogowiec.sqlite'
+    table_name = 'drogi'
 
     def __init__(self):
         super(RoadsModel).__init__()
@@ -105,8 +105,8 @@ class AddressPointsModel(GiapMVCModel):
         'Ważny od': 20,
         'Ważny do': 21,
     }
-    database_path = 'C:/Users/pajton3/Desktop/SKIERNIEWICE_SPDP/' \
-                    'PLIKI_WEKTOROWE/pkt_adresowe.sqlite'
+    database_path = 'C:/Users/pajton3/Desktop/pkt_adresowe.sqlite'
+    table_name = 'AD_PunktAdresowy'
 
     def __init__(self):
         super(AddressPointsModel).__init__()

@@ -176,7 +176,7 @@ class GiapMVCController(object):
     def run(self):
         """Run method that performs all the real work"""
         self.table_model = self.db_model.get_sqlmodel(self.db_model.db,
-                                                      'AD_PunktAdresowy')
+                                                      self.db_model.table_name)
         if not self.table_model:
             QMessageBox.warning(iface,
                                 "Uwaga",
